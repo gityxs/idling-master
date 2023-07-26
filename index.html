@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+        .btn-group button {
+            float: left; /* Float the buttons side by side */
+        }
+
+
+        </style>
+        <meta charset="UTF-8"/>
+        <title>Idling Master</title>
+        <script src="scripts/Logic.js"></script>
+        <script src="data/Enemies.js"></script>
+        <script src="data/Arena.js"></script>
+        <script src="data/City.js"></script>
+        <script src="data/Variables.js"></script>
+        <script src="data/Mine.js"></script>
+        <script src="data/Farm.js"></script>
+        <script src="data/Bounty.js"></script>
+        <script src="data/Warehouse.js"></script>
+        <script src="scripts/UI.js"></script>
+        <script src="scripts/Statistics.js"></script>
+        <script src="scripts/Bounty.js"></script>
+        <script src="scripts/Notations.js"></script>
+        <script src="scripts/City.js"></script>
+        <script src="scripts/Boss.js"></script>
+        <script src="scripts/Training.js"></script>
+        <script src="scripts/Warehouse.js"></script>
+        <script src="scripts/Arena.js"></script>
+        <script src="scripts/Dojo.js"></script>
+        <script src="scripts/Shop.js"></script>
+        <script src="scripts/Mine.js"></script>
+        <script src="scripts/Crafting.js"></script>
+        <script src="scripts/Farm.js"></script>
+        <script src="scripts/Regroup.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="initGame()">
+        <div class="w3-row">
+            <div style="height:100%" class="w3-col m3 l2 w3-gray">
+                <h3>Menu:</h3>
+                <button style="width: 100%" class="w3-button w3-dark-gray" onclick="goToBosses()">Bosses</button>
+                <button style="width: 100%" class="w3-button w3-dark-gray" onclick="goToTraining()">Training</button>
+                <button id="Zone1" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToDojo()" disabled>It's Locked Boys</button>
+                <button id="DojoShop" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToShop()" disabled>You gotta Learn...</button>
+                <button id="Zone5" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToArena()" disabled>Wow, I'm Locked</button>
+                <button id="Zone2" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToMine()" disabled>No No No...</button>
+                <button id="Zone3" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToFarm()" disabled>It's not for you today</button>
+                <button id="Zone4" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToWarehouse()" disabled>Cmon, unlock me</button>
+                <button id="Zone6" style="width: 100%" class="w3-button w3-dark-gray" onclick="goToCity()" disabled>Pfff, You know it's fun, right?</button>
+                <button style="width: 100%" class="w3-button w3-dark-gray" onclick="goToStats()">Statistics</button>
+                <hr/>
+                <button style="width: 100%" class="w3-button w3-dark-gray" onclick="goToHelp()">Toggle Help Screen</button>
+                <p style="position: absolute; bottom: 5px" id="Version"> Version</p>
+            </div>
+            <div style="height:100%" id="Screen" class="w3-col m6 l8">
+                
+            </div>
+            <div style="height:100%" class="w3-col m3 l2 w3-gray">
+                <div id="Player">
+                
+                </div>
+                <button style="width: 100%" class="w3-button w3-dark-gray" id="Rebirth"onclick="goToRegroup()" disabled>Don't click me</button>
+                <button style="width: 100%" class="w3-button w3-dark-gray" id="RebirthShop"onclick="goToRegroupShop()" disabled>Don't click me 2</button>
+                <div>    
+                    <h3>Clones:</h3><input style="width: 100%;text-align:center" type="text" id="NClones" value="1" placeholder="Clones">
+                    <div class="btn-group">
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign1Clones()">1X</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign10Clones()">10X</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign25Clones()">25X</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign100Clones()">100X</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign1percClones()">1%</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign10percClones()">10%</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assign25percClones()">25%</button>
+                        <button style="width: 25%" class="w3-button w3-dark-gray" onclick="assignAllClones()">MAX</button>
+                    </div>
+                    <h3>Saving and Loading:</h3>
+                    <button style="width: 100%" class="w3-button w3-dark-gray" onclick="save()">Save</button>
+                    <button style="width: 100%" class="w3-button w3-dark-gray" onclick="load()">Load</button>
+                    <button style="width: 100%" class="w3-button w3-dark-gray" onclick="ExportData()">Export Save</button>
+                    <input style="width:100%" id="DataImporter" type="text" placeholder="Save File"></input>
+                    <button style="width: 100%" class="w3-button w3-dark-gray" onclick="ImportData()">Import Save</button>
+                </div>    
+            </div>
+        </div>
+    </body>
+</html>
